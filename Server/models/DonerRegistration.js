@@ -16,6 +16,9 @@ email:
 {
     type:String,
     required:true,
+    unique: true, // no duplicate emails
+    lowercase: true, // always store in lowercase
+    match: [/^\S+@\S+\.\S+$/, "Please enter a valid email"],
 },
 phone:
 {
@@ -24,14 +27,28 @@ phone:
 },
 bloodGroup:
 {
-    type:Number,
+    type:String,
     required:true,
+     enum: ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]
+
 },
 password:
 {
     type:String,
     required:true,
+},
+otp:
+{
+    type:Number,
+    required:true,
 }
+ ,
+ isVerified:
+ {
+    type:Boolean,
+    required:true,
+    default:false,
+ }
 },{timestamps:true})
 
 const DonorUserexport=mongoose.model("Donoruser",Doneruser);

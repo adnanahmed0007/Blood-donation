@@ -1,5 +1,7 @@
 import DonorUserexport from "../models/DonerRegistration.js";
 import bcrypt from "bcrypt"
+import Generatedtoken from "../utils/Generatetoken.js";
+import sendotpuser from "../utils/SendOtp.js";
 const Signupuser=async(req,res,next)=>
 {
     try{
@@ -19,15 +21,25 @@ const Signupuser=async(req,res,next)=>
                 })
             }
             const hashedpassword=await bcrypt.hash(password,15);
+            const otpnumber=Math.random()*10*10*10*10*10;
+            const otpnuumerfloor=Math.floor(otpnumber);
+           
             const newuser=new DonorUserexport({
                 name:name.trim().toLowerCase(),
                 email:email.trim().toLowerCase(),
                 phone:phone,
-                bloodGroup:bloodGroup.trim().toLowerCase(),
+                bloodGroup:bloodGroup.trim(),
                 age:age,
                 password:hashedpassword,
+                otp:otpnuumerfloor,
+                isVerified:false,
+                 
             })
+            await sendotpuser(email,otpnuumerfloor);
+            
              const saved=await newuser.save()
+
+
              console.log(saved)
              if(saved){
                 return res
