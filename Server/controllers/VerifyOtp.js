@@ -7,7 +7,7 @@ const verifyOtp=async(req,res)=>
 
         const {email,otp}=req.body;
         const findUsder=await DonorUserexport.findOne({$and:[{email,otp}]});
-        console.log(findUsder)
+       
         if(findUsder)
         {
             findUsder.otp=0;

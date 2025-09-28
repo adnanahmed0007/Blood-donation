@@ -9,7 +9,7 @@ name:
 age:
 {
     type:Number,
-    requiredL:true,
+    required:true,
 },
  
 email:
@@ -24,6 +24,7 @@ phone:
 {
     type:Number,
     required:true,
+    unique: true,
 },
 bloodGroup:
 {

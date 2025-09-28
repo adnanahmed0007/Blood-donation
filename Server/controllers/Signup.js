@@ -1,7 +1,6 @@
 import DonorUserexport from "../models/DonerRegistration.js";
 import bcrypt from "bcrypt"
-import Generatedtoken from "../utils/Generatetoken.js";
-import sendotpuser from "../utils/SendOtp.js";
+ import sendotpuser from "../utils/SendOtp.js";
 const Signupuser=async(req,res,next)=>
 {
     try{
