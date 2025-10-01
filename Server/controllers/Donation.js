@@ -5,20 +5,24 @@ const Donation=async(req,res,next)=>
 {
     try{
 const user=req.user;
+ 
 if (!user) {
     return res.status(403).json({ message: "Please verify your account before donating" });
   }
-console.log(user._id)
+ 
  const {bloodGroup,Registerday,Address, NearestHospital}=req.body;
  if(bloodGroup&&Registerday&&Address&&NearestHospital)
  {
       const userIdInfo=user._id;
+     
+
       const newdatasaved=new RegsutratuioDonormodel({
         bloodGroup:bloodGroup.trim(),
         Registerday:Registerday,
         Address:Address.trim().toLowerCase(),
         NearestHospital:NearestHospital.trim().toLowerCase(),
         userIdInfo:userIdInfo,
+        phoneNumber:user.phone,
       })
      const chcek=await newdatasaved.save();
      if(!chcek){

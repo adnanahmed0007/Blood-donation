@@ -30,7 +30,7 @@ const Donate = () => {
         formData,
         { withCredentials: true }
       );
-
+  console.log(res)
       setLoading(false);
 
       toast.success("🎉 You have registered successfully! Thank you ❤️", {

@@ -8,14 +8,14 @@ const sendotpuser=async(email,otpnuumerfloor)=>
   host: 'smtp.ethereal.email',
   port: 587,
   auth: {
-      user: 'reagan.green@ethereal.email',
-      pass: 'wFt1246U4uefJh3pT9'
+      user: 'emilio.bogisich8@ethereal.email',
+      pass: '6xRuZCtsMHw1kYHsDF'
   }
 });
 // Wrap in an async IIFE so we can use await.
 (async () => {
   const info = await transporter.sendMail({
-    from:"reagan.green@ethereal.email",
+    from:"6xRuZCtsMHw1kYHsDF",
     to:email.trim(),
     subject: "OTP SEND",
     text:`the otp of is ${otpnuumerfloor}`, // plain‑text body

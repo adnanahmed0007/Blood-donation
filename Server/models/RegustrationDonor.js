@@ -28,6 +28,12 @@ const RegsutratuioDonor=new mongoose.Schema({
         type:mongoose.Schema.ObjectId,
         ref:"Donoruser"
     }
+    ,
+    phoneNumber:
+    {
+        type:Number,
+        required:true,
+    }
 
 },{timestamps:true})
 const RegsutratuioDonormodel= mongoose.model("RegustrationDono",RegsutratuioDonor);

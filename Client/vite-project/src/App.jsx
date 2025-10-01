@@ -7,6 +7,7 @@ import Login from "./Login"
 import SearchBlood from "./SearchbLood"
 import Header from "./Header"
 import Verify from "./Verify"
+import SearchValue from "./Searchvalue"
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<SearchBlood />} />
         <Route path="/verifyotp" element={<Verify />} />
-        
+        <Route path="/results" element={<SearchValue />} />
 
       </Routes>
     </Router>
