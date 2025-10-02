@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import img from "../src/istockphoto-1415405974-612x612.jpg";
+ import  img from "./set-all-blood-type-human-arm-donate-blood_1308-129939.jpg"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom"; // ✅ import navigate
